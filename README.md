@@ -47,7 +47,7 @@ We only have a couple of rules and we hope you enjoy the process :)
 5. Put all New model related codes in the 'Code (Modules)' folder.
 6. Upload the entire model file ('.h5' extension) in the 'CNN_Model' folder.
 7. All contributions have points assigned to them (All details regarding points will be mentioned in each of the issues created).
-8. Creating issues also counts in as a contribution and earns you points too! (points are assigned based on the issue created).
+8. Creating issues counts in as a contribution and earns you points too! (points are assigned based on the issue created).
 
 
 ## Contributing Process
