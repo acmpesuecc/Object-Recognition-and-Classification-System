@@ -1,35 +1,15 @@
 import numpy
 import numpy as np
-import pandas
-from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, BatchNormalization, Activation
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.constraints import maxnorm
 from keras.utils import np_utils
-from keras import backend as K
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import KFold
-from sklearn.preprocessing import LabelEncoder
-from sklearn.pipeline import Pipeline
 import PIL.Image as Image
 from cv2 import *
 from keras.datasets import cifar10
 
 seed = 17
-
-# load dataset
-dataframe = pandas.read_csv("iris.data", header=None)
-dataset = dataframe.values
-X = dataset[:,0:4].astype(float)
-Y = dataset[:,4]
-# encode class values as integers
-encoder = LabelEncoder()
-encoder.fit(Y)
-encoded_Y = encoder.transform(Y)
-# convert integers to dummy variables (i.e. one hot encoded)
-dummy_y = np_utils.to_categorical(encoded_Y)
- 
 
 # Loading in the training and testing data
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
