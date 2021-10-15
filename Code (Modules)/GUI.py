@@ -60,19 +60,19 @@ class tkinterApp(Tk):
 class StartPage(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
-        self.configure(bg='grey')
+        self.configure(bg='blue')
         self.bg1 = ImageTk.PhotoImage(file="Background.png")
         l2 = Label(self, image=self.bg1)
         l2.place(anchor='center', relx=0.5, rely=0.5)
 
-        l1 = Label(self, text='OBJECT RECOGNITION SYSTEMS', font=LARGEFONT, bg='grey')
+        l1 = Label(self, text='OBJECT RECOGNITION SYSTEMS', font=LARGEFONT, bg='blue')
         l1.place(anchor='center', relx=0.5, rely=0.1)
 
         b1 = Button(self, text='Choose Files', command=lambda: controller.show_frame(Page1), font=BUTTONFONT,
-                    bg='grey', activebackground='grey', width=12)
+                    bg='blue', activebackground='blue', width=12)
         b1.place(anchor='e', relx=0.3, rely=0.9)
 
-        b2 = Button(self, text='Live Feed', command=live_feed, font=BUTTONFONT, bg='grey', activebackground='grey',
+        b2 = Button(self, text='Live Feed', command=live_feed, font=BUTTONFONT, bg='blue', activebackground='blue',
                     width=10)
         b2.place(anchor='e', relx=0.9, rely=0.9)
 
@@ -80,15 +80,15 @@ class StartPage(Frame):
 class Page1(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
-        self.configure(bg='grey')
+        self.configure(bg='blue')
 
-        l1 = Label(self, text='OBJECT RECOGNITION SYSTEMS', font=LARGEFONT, bg='grey')
+        l1 = Label(self, text='OBJECT RECOGNITION SYSTEMS', font=LARGEFONT, bg='blue')
         l1.place(anchor='center', relx=0.5, rely=0.1)
 
-        c1 = Canvas(self, height=300, width=300, bg='grey', bd=20)
+        c1 = Canvas(self, height=250, width=250, bg='blue', bd=20)
         c1.place(anchor='center', relx=0.5, rely=0.5)
 
-        l2 = Label(self, text='INSERT YOUR IMAGE HERE', font=BUTTONFONT, bg='grey')
+        l2 = Label(self, text='INSERT YOUR IMAGE HERE', font=BUTTONFONT, bg='blue')
         l2.place(anchor='center', relx=0.5, rely=0.5)
 
         def files():
@@ -99,7 +99,7 @@ class Page1(Frame):
             else:
                 count += 1
                 image2 = PIL.ImageTk.Image.open(file_name)
-                image2 = image2.resize((300, 300), PIL.ImageTk.Image.ANTIALIAS)
+                image2 = image2.resize((250, 250), PIL.ImageTk.Image.ANTIALIAS)
                 self.bg2 = ImageTk.PhotoImage(image2)
                 l3 = Label(self, image=self.bg2)
                 l3.place(anchor='center', relx=0.5, rely=0.5)
@@ -108,9 +108,9 @@ class Page1(Frame):
             global count
             if count == 1:
                 count = 0
-                c2 = Canvas(self, height=300, width=300, bg='grey', bd=20)
+                c2 = Canvas(self, height=250, width=250, bg='blue', bd=20)
                 c2.place(anchor='center', relx=0.5, rely=0.5)
-                l4 = Label(self, text='INSERT YOUR IMAGE HERE', font=BUTTONFONT, bg='grey')
+                l4 = Label(self, text='INSERT YOUR IMAGE HERE', font=BUTTONFONT, bg='blue')
                 l4.place(anchor='center', relx=0.5, rely=0.5)
                 controller.show_frame(Page2)
             else:
@@ -119,36 +119,36 @@ class Page1(Frame):
         def Startpage_Proceed():
             global count
             count = 0
-            c3 = Canvas(self, height=300, width=300, bg='grey', bd=20)
+            c3 = Canvas(self, height=250, width=250, bg='blue', bd=20)
             c3.place(anchor='center', relx=0.5, rely=0.5)
-            l5 = Label(self, text='INSERT YOUR IMAGE HERE', font=BUTTONFONT, bg='grey')
+            l5 = Label(self, text='INSERT YOUR IMAGE HERE', font=BUTTONFONT, bg='blue')
             l5.place(anchor='center', relx=0.5, rely=0.5)
             controller.show_frame(StartPage)
 
         b1 = Button(self, text='File Explorer', command=files, font=BUTTONFONT,
-                    bg='grey', activebackground='grey', width=12)
+                    bg='blue', activebackground='blue', width=12)
         b1.place(anchor='e', relx=0.3, rely=0.9)
 
-        b2 = Button(self, text='Back', command=Startpage_Proceed, font=BUTTONFONT, bg='grey',
-                    activebackground='grey', width=10)
+        b2 = Button(self, text='Back', command=Startpage_Proceed, font=BUTTONFONT, bg='blue',
+                    activebackground='blue', width=10)
         b2.place(anchor='e', relx=0.88, rely=0.9)
 
-        b3 = Button(self, text='Proceed', command=Page2_Proceed, font=BUTTONFONT, bg='grey',
-                    activebackground='grey', width=10)
+        b3 = Button(self, text='Proceed', command=Page2_Proceed, font=BUTTONFONT, bg='blue',
+                    activebackground='blue', width=10)
         b3.place(anchor='e', relx=0.59, rely=0.9)
 
 
 class Page2(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
-        self.configure(bg='grey')
+        self.configure(bg='blue')
 
         global cnt, file_name
 
-        l1 = Label(self, text='OBJECT RECOGNITION SYSTEMS', font=LARGEFONT, bg='grey')
+        l1 = Label(self, text='OBJECT RECOGNITION SYSTEMS', font=LARGEFONT, bg='blue')
         l1.place(anchor='center', relx=0.5, rely=0.1)
 
-        c1 = Canvas(self, height=300, width=400, bg='grey', bd=20, highlightcolor='grey')
+        c1 = Canvas(self, height=250, width=400, bg='blue', bd=20, highlightcolor='blue')
         c1.place(anchor='center', relx=0.5, rely=0.5)
 
         def test():
@@ -227,32 +227,32 @@ class Page2(Frame):
                 res = 'Error!!'
 
             image3 = PIL.ImageTk.Image.open(file_name)
-            image3 = image3.resize((400, 300), PIL.ImageTk.Image.ANTIALIAS)
+            image3 = image3.resize((400, 250), PIL.ImageTk.Image.ANTIALIAS)
             self.bg3 = ImageTk.PhotoImage(image3)
             l3 = Label(self, image=self.bg3)
             l3.place(anchor='center', relx=0.5, rely=0.5)
 
-            l4 = Label(self, text=res + str(accuracy)+'%', font=RESULTFONT, bg='grey')
+            l4 = Label(self, text=res + str(accuracy)+'%', font=RESULTFONT, bg='blue')
             l4.place(anchor='center', relx=0.5, rely=0.9)
 
             '''
-            l5 = Label(self, text=str(accuracy) + '%', font=RESULTFONT, bg='grey')
+            l5 = Label(self, text=str(accuracy) + '%', font=RESULTFONT, bg='blue')
             l5.place(anchor='center', relx=0.6, rely=0.9)
             '''
 
         def page1_proceed():
-            c2 = Canvas(self, height=10, width=170, bg='grey', bd=20)
+            c2 = Canvas(self, height=10, width=170, bg='blue', bd=20)
             c2.place(anchor='center', relx=0.5, rely=0.9)
-            f2 = Frame(self, height=100, width=240, bg='grey')
+            f2 = Frame(self, height=100, width=240, bg='blue')
             f2.place(anchor='center', relx=0.5, rely=0.9)
             controller.show_frame(Page1)
 
-        b1 = Button(self, text='Results', command=test, font=BUTTONFONT, bg='grey',
-                    activebackground='grey', width=12)
+        b1 = Button(self, text='Results', command=test, font=BUTTONFONT, bg='blue',
+                    activebackground='blue', width=12)
         b1.place(anchor='e', relx=0.3, rely=0.9)
 
-        b2 = Button(self, text='Back', command=page1_proceed, font=BUTTONFONT, bg='grey',
-                    activebackground='grey', width=10)
+        b2 = Button(self, text='Back', command=page1_proceed, font=BUTTONFONT, bg='blue',
+                    activebackground='blue', width=10)
         b2.place(anchor='e', relx=0.88, rely=0.9)
 
 
