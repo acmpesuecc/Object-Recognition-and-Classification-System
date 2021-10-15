@@ -45,12 +45,12 @@ class tkinterApp(Tk):
 
         self.frames = {}
 
-        for F in (StartPage, Page1, Page2):
+        for F in (NewPage, StartPage, Page1, Page2):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame(StartPage)
+        self.show_frame(NewPage)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
