@@ -55,6 +55,24 @@ class tkinterApp(Tk):
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
+        
+#addition of a new page
+class NewPage(Frame):
+    def __init__(self, parent, controller):
+        Frame.__init__(self, parent)
+        self.configure(bg='yellow')
+
+        l1 = Label(self, text='LOGIN', font=LARGEFONT, bg='grey')
+        l1.place(anchor='center', relx=0.5, rely=0.1)
+
+        b1 = Button(self, text='Username', command=lambda: controller.show_frame(Page1), font=BUTTONFONT,
+                    bg='grey', activebackground='grey', width=12)
+        b1.place(anchor='e', relx=0.3, rely=0.9)
+
+        b2 = Button(self, text='Password', command=live_feed, font=BUTTONFONT, bg='grey', activebackground='grey',
+                    width=10)
+        b2.place(anchor='e', relx=0.9, rely=0.9)
+
 
 
 class StartPage(Frame):
