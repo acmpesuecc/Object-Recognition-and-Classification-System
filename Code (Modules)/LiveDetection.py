@@ -77,14 +77,14 @@ while True:
 			cv2.putText(frame, label, (startX, y),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
 
-    # show the output frame
-    cv2.imshow("Frame", frame)
-    key = cv2.waitKey(1) & 0xFF
-    # if the `q` key was pressed, break from the loop
-    if key == ord("q"):
-      break
-    # update the FPS counter
-    fps.update()
+			# show the output frame
+			cv2.imshow("Frame", frame)
+			key = cv2.waitKey(1) & 0xFF
+			# if the `q` key was pressed, break from the loop
+			if key == ord("q"):
+			  break
+			# update the FPS counter
+			fps.update()
       
       # stop the timer and display FPS information
 fps.stop()
