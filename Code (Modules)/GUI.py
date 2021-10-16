@@ -8,6 +8,9 @@ import tensorflow as tf
 from keras_preprocessing import image
 from keras.datasets import cifar10
 
+#LoginPage
+execfile('Login.py')
+
 #Declaring various different fonts used in the GUI
 LARGEFONT = ("Brush Script MT", 30)
 BUTTONFONT = ("COPPERPLATE", 12)
