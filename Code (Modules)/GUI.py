@@ -8,8 +8,6 @@ import tensorflow as tf
 from keras_preprocessing import image
 from keras.datasets import cifar10
 
-#LoginPage
-execfile('Login.py')
 
 #Declaring various different fonts used in the GUI
 LARGEFONT = ("Brush Script MT", 30)
@@ -257,6 +255,46 @@ class Page2(Frame):
         b2 = Button(self, text='Back', command=page1_proceed, font=BUTTONFONT, bg='grey',
                     activebackground='grey', width=10)
         b2.place(anchor='e', relx=0.88, rely=0.9)
+
+class LoginPage(Frame):
+	def __init__(self, parent, controller):
+		Frame.__init__(self, parent)
+		self.configure(bg='grey')
+		self.bg1 = ImageTk.PhotoImage(file="Background.png")
+	
+	def onClick():
+		mbx.showinfo("Confirming Login","Login Succesful!")
+
+	#dictionary to store user,pwd for user profiles
+	data={}
+
+	# Storing data in a text file in dictionary form
+	def adduser():
+		user = username.get()
+		pwd = password.get()
+		data[user] = pwd
+		addloguser = open ("database.txt", "a")
+		addloguser.write(str(data))
+		addloguser.close()
+		#Confirming Login Succesful
+		onClick()
+		#Closing all windows
+		self.quit
+		exit(0)	
+
+	#username label and text entry box
+	usernameLabel = Label(self,text="User Name").grid(row=0, column=0)
+	username = StringVar()
+	usernameEntry = Entry(self, textvariable=username).grid(row=0, column=1)  
+
+	#password label and password entry box
+	passwordLabel = Label(self,text="Password").grid(row=1, column=0)  
+	password = StringVar()
+	passwordEntry = Entry(self, textvariable=password, show='*').grid(row=1, column=1)  
+
+		
+	#login button
+	loginButton = Button(self, text="Login", command=adduser).grid(row=4, column=1) 
 
 
 root = tkinterApp()
